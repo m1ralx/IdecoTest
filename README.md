@@ -14,3 +14,8 @@
 * Добавление рейса POST запросом с JSON-описанием рейса в body
 * Изменение рейса PUT запросом
 * Удаление рейса DELETE запросом
+
+## Quickstart
+* `npm install`
+* `npm run dev`
+* goto 127.0.0.1:5000/flights
