@@ -10,7 +10,7 @@
 
 ## API
 * Получение GET запросом списка рейсов, удовлетворяющих параметрам запроса:
-* * sourceCity, destinationCity, status
+ __sourceCity, destinationCity, status__
 * Добавление рейса POST запросом с JSON-описанием рейса в body
 * Изменение рейса PUT запросом
 * Удаление рейса DELETE запросом
