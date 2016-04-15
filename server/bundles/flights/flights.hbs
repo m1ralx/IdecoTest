@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="{{ meta.charset }}">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ meta.description }}">
+
+    {{#if isDev}}
+        <link rel="stylesheet" href="flights.css">
+    {{else}}
+        <link rel="stylesheet" href="//flights.surge.sh/flights.css">
+    {{/if}}
+</head>
+<body>
+<div id="root">
+    Пожалуйста, подождите.
+</div>
+<div class="flight__form__container">
+    <form class="flight__form">
+        <input type="text" name="text" class="flight__form__text"/>
+        <input type="submit" class="flight__form__submit" value="Add"/>
+    </form>
+</div>
+{{> footer/footer }}
+
+{{#if isDev}}
+    <script src="flights.js"></script>
+{{else}}
+    <script src="//flights.surge.sh/flights.js"></script>
+{{/if}}
+</body>
+</html>
