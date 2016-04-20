@@ -4,3 +4,77 @@
 {
     margin: auto;
 }
+
+.flights__container
+{
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+}
+
+.flights__container td
+{
+    border: 2px solid #888;
+}
+
+.flight__delete-button
+{
+    width: 24px;
+    height: 24px;
+    background: url(//localhost:8080/delete.png) center no-repeat;
+}
+
+.flight__edit-button
+{
+    display: none;
+}
+
+.flight__edit-button:not(:checked) ~ .flight-info > .edit-field
+{
+    display: none;
+}
+
+.flight__edit-button:checked ~ .flight-info span,
+.flight__edit-button:checked ~ .flight-info time
+{
+    border: red 2px solid;
+    display: none;
+}
+
+.flight__edit-button:checked ~ .flight-info span
+{
+    text-overflow: ellipsis;
+}
+
+.flight-edit
+{
+    width: 24px;
+    height: 24px;
+}
+
+.flight-edit > label
+{
+    display: table-cell;
+    width: 24px;
+    height: 24px;
+    background: url(//localhost:8080/edit.png) center no-repeat;
+}
+
+.flight__edit-button:checked ~ .flight-edit > label
+{
+    background: url(//localhost:8080/check.png) center no-repeat;
+}
+
+.flight__source-city,
+.flight__destination-city,
+.flight__plane-type,
+.flight__status
+{
+    width: 18%;
+}
+
+.flight__departure-time,
+.flight__real-departure-time
+{
+    width: 12%
+}

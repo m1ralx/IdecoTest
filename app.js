@@ -16,36 +16,35 @@ app.set('view engine', 'hbs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.set('port', (process.env.PORT || 5000));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: false
+    extended: false
 }));
 
 /* eslint max-params: [2, 4] */
 app.use((err, req, res, next) => {
-  console.error(err);
+    console.error(err);
 
-  next();
+    next();
 });
 app.use((req, res, next) => {
-  req.commonData = {
-    meta: {
-      description: 'Flights',
-      charset: 'utf-8'
-    },
-    page: {
-      title: 'Flights'
-    },
-    isDev: process.env.NODE_ENV === 'development'
-  };
+    req.commonData = {
+        meta: {
+            description: 'Flights',
+            charset: 'utf-8'
+        },
+        page: {
+            title: 'Flights'
+        },
+        isDev: process.env.NODE_ENV === 'development'
+    };
 
-  next();
+    next();
 });
 
 require('./server/routes')(app);

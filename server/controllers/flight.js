@@ -19,30 +19,41 @@ function filterFlights(requestWithFilters, flights) {
 }
 
 exports.list = (req, res) => {
-    res.render('flights/flights', Object.assign(data, req.commonData));
+    res.render('flights/flights', req.commonData);
 };
 
 exports.apiList = (req, res) => {
     res.json({flights: filterFlights(req, Flight.findAll())});
 };
 
-exports.edit = (req, res) => {
-    res.render('flights/flights', req.commonData);
+exports.create = (req, res) => {
+    const flight = new Flight(
+        req.body.id,
+        req.body.sourceCity,
+        req.body.destinationCity,
+        req.body.planeType,
+        req.body.departureTime,
+        req.body.realDepartureTime,
+        req.body.status
+    );
+    flight.save();
+    res.status(200).send();
 };
 
-exports.create = (req, res) => {
-    const data = {
-        id: req.body.id,
-        sourceCity: req.body.sourceCity,
-        destinationCity: req.body.destinationCity,
-        planeType: req.body.planeType,
-        departureTime: req.body.departureTime,
-        realDepartureTime: req.body.realDepartureTime,
-        status: req.body.status
-    };
-    const flight = new Flight(data);
+exports.edit = (req, res) => {
+    if (Flight.updateById(req.body.id, req.body)) {
+        res.status(200).send();
+    } else {
+        res.status(400).send();
+    }
+};
 
-    flight.save();
-
-    res.json(data);
+exports.delete = (req, res) => {
+    var flightId = req.body.flightId;
+    var result = Flight.deleteById(flightId);
+    if (result) {
+        res.status(200).send();
+    } else {
+        res.status(400).send();
+    }
 };

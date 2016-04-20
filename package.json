@@ -8,10 +8,11 @@
     "lint": "npm-run-all lint:*",
     "start": "SET NODE_ENV=development&&node app.js",
     "local": "npm-run-all build deploy:* start",
+    "webpack-dev-server": "webpack-dev-server --config=webpack.dev.config.js --hot --inline --content-base=public/",
+    "dev": "npm-run-all --parallel webpack-dev-server start",
     "precommit": "npm-run-all lint:* lint",
     "deploy:static": "surge -p ./public -d flights.surge.sh",
-    "build": "webpack",
-    "dev": "webpack --config webpack.dev.config.js && npm start"
+    "build": "webpack"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -45,6 +46,7 @@
     "postcss-loader": "^0.8.2",
     "style-loader": "^0.13.1",
     "surge": "^0.17.7",
-    "webpack": "^1.12.15"
+    "webpack": "^1.12.15",
+    "webpack-dev-server": "^1.14.1"
   }
 }

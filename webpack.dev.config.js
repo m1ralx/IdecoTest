@@ -1,18 +1,20 @@
+'use strict';
+
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
-
 module.exports = {
     context: path.join(__dirname, 'server/bundles'),
     entry: {
         flights: './flights/flights.js'
     },
     devtool: 'source-map',
+    //devtools: 'eval',
     output: {
         path: path.join(__dirname, 'public'),
-        filename: '[name].js',
-        sourceMapFilename: '[name].map',
-        publicPath: '/'
+        filename: '[name].bundle.js',
+        sourceMapFilename: '[name].bundle.map',
+        publicPath: 'http://localhost:8080/'
     },
     module: {
         loaders: [
@@ -32,7 +34,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('[name].css')
+        new ExtractTextPlugin('[name].bundle.css')
     ],
     postcss: () => {
         return [autoprefixer];

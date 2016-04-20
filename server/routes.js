@@ -1,7 +1,6 @@
 'use strict';
 const pages = require('./controllers/pages');
 const flightController = require('./controllers/flight');
-const Flight = require('./models/flight');
 
 module.exports = function (app) {
     app.get('/', pages.index);
@@ -11,12 +10,12 @@ module.exports = function (app) {
     app.get('/flights', flightController.list);
     app.post('/flights', flightController.create);
     app.put('/flights', flightController.edit);
-
+    app.delete('/flights', flightController.delete);
     app.all('*', pages.error404);
 
     /* eslint no-unused-vars: 0 */
     /* eslint max-params: [2, 4] */
-    app.use((err, req, res, next) => {
+    app.use((err, req, res) => {
         console.error(err);
 
         res.sendStatus(500);
