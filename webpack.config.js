@@ -7,7 +7,7 @@ const webpack = require('webpack');
 module.exports = {
     context: path.join(__dirname, 'server/bundles'),
     entry: {
-        todos: './flights/flights.js'
+        flights: './flights/flights.js'
     },
     devtool: 'source-map',
     output: {

@@ -57,12 +57,12 @@
     display: table-cell;
     width: 24px;
     height: 24px;
-    background: url(//localhost:8080/edit.png) center no-repeat;
+    background: url(//flights.surge.sh/edit.png) center no-repeat;
 }
 
 .flight__edit-button:checked ~ .flight-edit > label
 {
-    background: url(//localhost:8080/check.png) center no-repeat;
+    background: url(//flights.surge.sh/check.png) center no-repeat;
 }
 
 .flight__source-city,
