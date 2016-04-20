@@ -1,6 +1,5 @@
 
 export const addFlight = flight => {
-    console.log(flight);
     return {
         type: 'ADD_FLIGHT',
         flight

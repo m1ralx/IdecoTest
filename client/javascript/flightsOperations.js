@@ -80,6 +80,7 @@ exports.createFlightOnClick = function (store, event) {
         flight[elementName] = element.children[0].value;
     });
     sendRequest(flight, 'post', () => store.dispatch(addFlight(flight)));
+    elements.forEach(element => element.children[0].value = "")
 };
 
 exports.deleteFlightOnClick = function (store, event) {

@@ -9,7 +9,6 @@ module.exports = {
         flights: './flights/flights.js'
     },
     devtool: 'source-map',
-    //devtools: 'eval',
     output: {
         path: path.join(__dirname, 'public'),
         filename: '[name].bundle.js',
