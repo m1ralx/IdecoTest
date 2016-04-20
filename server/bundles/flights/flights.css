@@ -21,7 +21,7 @@
 {
     width: 24px;
     height: 24px;
-    background: url(//localhost:8080/delete.png) center no-repeat;
+    background: url(//flights.surge.sh/delete.png) center no-repeat;
 }
 
 .flight__edit-button
