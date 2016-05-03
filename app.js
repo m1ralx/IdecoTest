@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'server/bundles'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -35,11 +35,11 @@ app.use((err, req, res, next) => {
 app.use((req, res, next) => {
     req.commonData = {
         meta: {
-            description: 'Flights',
+            description: 'Todos',
             charset: 'utf-8'
         },
         page: {
-            title: 'Flights'
+            title: 'Todos'
         },
         isDev: process.env.NODE_ENV === 'development'
     };

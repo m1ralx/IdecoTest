@@ -1,5 +1,5 @@
 {
-  "name": "IdecoTest",
+  "name": "webdev-tasks-5",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "local": "npm-run-all build deploy:* start",
     "webpack-dev-server": "webpack-dev-server --config=webpack.dev.config.js --hot --inline --content-base=public/",
     "dev": "npm-run-all --parallel webpack-dev-server start",
-    "precommit": "npm-run-all lint:* lint",
+    "precommit": "SET NODE_ENV=development",
     "deploy:static": "surge -p ./public -d flights.surge.sh",
     "build": "webpack"
   },

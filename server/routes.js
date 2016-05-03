@@ -1,16 +1,16 @@
 'use strict';
 const pages = require('./controllers/pages');
-const flightController = require('./controllers/flight');
+const todoController = require('./controllers/todo');
 
 module.exports = function (app) {
     app.get('/', pages.index);
 
-    app.get('/api/flights', flightController.apiList);
+    app.get('/api/todos', todoController.apiList);
 
-    app.get('/flights', flightController.list);
-    app.post('/flights', flightController.create);
-    app.put('/flights', flightController.edit);
-    app.delete('/flights', flightController.delete);
+    app.get('/todos', todoController.list);
+    app.post('/todos', todoController.create);
+    app.put('/todos', todoController.edit);
+    app.delete('/todos', todoController.delete);
     app.all('*', pages.error404);
 
     /* eslint no-unused-vars: 0 */

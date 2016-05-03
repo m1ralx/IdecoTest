@@ -6,9 +6,9 @@
     <meta name="description" content="{{ meta.description }}">
 
     {{#if isDev}}
-        <link rel="stylesheet" href="//localhost:8080/flights.bundle.css">
+        <link rel="stylesheet" href="//localhost:8080/todos.bundle.css">
     {{else}}
-        <link rel="stylesheet" href="//flights.surge.sh/flights.css">
+        <link rel="stylesheet" href="//todos.surge.sh/todos.css">
     {{/if}}
 </head>
 <body>
@@ -19,9 +19,9 @@
 {{> footer/footer }}
 
 {{#if isDev}}
-    <script src="//localhost:8080/flights.bundle.js"></script>
+    <script src="//localhost:8080/todos.bundle.js"></script>
 {{else}}
-    <script src="//flights.surge.sh/flights.js"></script>
+    <script src="//todos.surge.sh/todos.js"></script>
 {{/if}}
 </body>
 </html>

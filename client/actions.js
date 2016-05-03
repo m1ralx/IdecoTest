@@ -1,21 +1,21 @@
 
-export const addFlight = flight => {
+export const addTodo = todo => {
     return {
-        type: 'ADD_FLIGHT',
-        flight
+        type: 'ADD_TODO',
+        todo
     };
 };
 
-export const deleteFlight = flightId => {
+export const deleteTodo = todoId => {
     return {
-        type: 'DELETE_FLIGHT',
-        flightId
-    }
+        type: 'DELETE_TODO',
+        todoId
+    };
 };
 
-export const editFlight = flight => {
+export const editTodo = todo => {
     return {
-        type: 'EDIT_FLIGHT',
-        flight
-    }
+        type: 'EDIT_TODO',
+        todo
+    };
 };

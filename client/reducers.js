@@ -1,25 +1,25 @@
 'use strict';
 const initialState = {
-    flights: []
+    todos: []
 };
 
-exports.flightApp = (state, action) => {
+exports.todoApp = (state, action) => {
     state = state || initialState;
     switch (action.type) {
-        case 'ADD_FLIGHT':
-            state.flights.push(action.flight);
+        case 'ADD_TODO':
+            var todos = [action.todo, ...state.todos];
             return {
-                flights: state.flights
+                todos
             };
-        case 'DELETE_FLIGHT':
+        case 'DELETE_TODO':
             return {
-                flights: state.flights.filter(flight => flight.id !== action.flightId)
+                todos: state.todos.filter(todo => todo.id !== action.todoId)
             };
-        case 'EDIT_FLIGHT':
-            var flightStorageIndex = state.flights.findIndex(flight => flight.id === action.flight.id);
-            state.flights[flightStorageIndex] = action.flight;
+        case 'EDIT_TODO':
+            var todoStorageIndex = state.todos.findIndex(todo => todo.id === action.todo.id);
+            state.todos[todoStorageIndex] = action.todo;
             return {
-                flights: state.flights
+                todos: state.todos
             };
         default:
             return state;
